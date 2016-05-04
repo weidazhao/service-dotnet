@@ -1,9 +1,10 @@
 FROM microsoft/dotnet-preview
 
-RUN mkdir /app
-WORKDIR /app
-COPY . /app
-RUN cd /app && dotnet restore && dotnet build
-
-EXPOSE 80
 CMD ["dotnet", "run"]
+
+WORKDIR /app
+COPY project.json .
+COPY NuGet.config .
+RUN dotnet restore
+COPY . .
+RUN dotnet build
