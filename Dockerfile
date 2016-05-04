@@ -1,4 +1,4 @@
-FROM microsoft/dotnet-preview:latest
+FROM microsoft/dotnet-preview
 
 RUN mkdir /app
 WORKDIR /app
