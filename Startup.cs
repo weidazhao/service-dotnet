@@ -22,13 +22,18 @@ namespace Backend
             //
             // Health check
             //
-            app.Map("", subApp =>
+            app.Run(context =>
             {
-                subApp.Run(context =>
+                if (context.Request.Path == "/")
                 {
-                     context.Response.StatusCode = 200;
-                     return Task.CompletedTask;
-                });
+                    context.Response.StatusCode = 200;
+                }
+                else
+                {
+                    context.Response.StatusCode = 404;
+                }
+                
+                return Task.CompletedTask;
             });
         }
     }
