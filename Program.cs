@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace HelloWeb
+namespace Backend
 {
     public class Program
     {
