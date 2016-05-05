@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Backend
 {
-    [Route("/api/counter")]
+    [Route("/")]
     public class CounterController
     {
         private static int _count = 0;
