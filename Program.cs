@@ -13,7 +13,7 @@ namespace Backend
             var webHost = new WebHostBuilder().UseKestrel()
                                               .UseContentRoot(Directory.GetCurrentDirectory())                        
                                               .UseStartup<Startup>()
-                                              .UseUrls($"http://+:{port}")
+                                              .UseUrls($"http://localhost:{port}")
                                               .Build();
 
             webHost.Run();
