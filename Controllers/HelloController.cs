@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Backend
 {
@@ -8,7 +9,7 @@ namespace Backend
         [HttpGet]
         public string Get()
         {
-            return $"Hello {System.DateTimeOffset.UtcNow}";
+            return $"Hello world! Time: {DateTimeOffset.UtcNow.ToString("u")}";
         }
     }
 }
