@@ -1,9 +1,5 @@
 FROM microsoft/dotnet-preview
-COPY project.json /app/
-COPY NuGet.config /app/
+COPY . /app/
 WORKDIR /app
-RUN dotnet restore
-RUN dotnet build -c Release
-COPY . /app
 EXPOSE 5000
-ENTRYPOINT dotnet run -c Release
+ENTRYPOINT dotnet service-dotnet.dll
