@@ -9,7 +9,7 @@ namespace Backend
         [HttpGet]
         public string Get()
         {
-            return $"Hello Docker! Time: {DateTimeOffset.UtcNow.ToString("u")}";
+            return $"Hello Docker Swarm on ACS! Time: {DateTimeOffset.UtcNow.ToString("u")}";
         }
     }
 }
