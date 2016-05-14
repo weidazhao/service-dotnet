@@ -1,10 +1,10 @@
-FROM microsoft/dotnet
+FROM microsoft/dotnet:1.0.0-preview1
 
-CMD ["dotnet", "run"]
+WORKDIR /dotnetapp
 
-WORKDIR /app
-
-COPY project.json NuGet.config ./
+COPY project.json NuGet.config /dotnetapp
 RUN dotnet restore
 COPY . .
 RUN dotnet build
+
+ENTRYPOINT ["dotnet", "run"]
