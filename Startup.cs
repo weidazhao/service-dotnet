@@ -8,7 +8,9 @@ namespace Backend
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
+            services.AddCors();
+            
             services.AddMvcCore()
                     .AddJsonFormatters();
         }
@@ -16,6 +18,8 @@ namespace Backend
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(LogLevel.Debug);
+            
+            app.UseCors(builder => builder.WithOrigins("*").WithMethods("*"));
             
             app.UseMvc();
             
