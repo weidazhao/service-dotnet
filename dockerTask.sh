@@ -1,4 +1,4 @@
-imageName="service-dotnet"
+imageName="weidazhao/service-dotnet"
 publicPort=5000
 isWebProject=true
 
@@ -40,6 +40,14 @@ buildImage () {
       tag="$(date +'%Y-%m-%d_%H-%M-%S')"
       docker tag $imageName "$imageName:$tag"
     fi
+}
+
+# Builds the Docker image.
+buildImage2 () {
+  echo "Building the image $imageName ($ENVIRONMENT)."
+  docker build -t $imageName:latest
+  tag="$(date +'%Y-%m-%d_%H-%M-%S')"
+  docker tag $imageName "$imageName:$tag"  
 }
 
 # Runs docker-compose.
@@ -111,6 +119,10 @@ else
       "build")
              ENVIRONMENT=$2
              buildImage
+             ;;
+      "build2")
+             ENVIRONMENT=$2
+             buildImage2
              ;;
       "clean")
              cleanAll
