@@ -45,7 +45,7 @@ buildImage () {
 # Builds the Docker image.
 buildImage2 () {
   echo "Building the image $imageName ($ENVIRONMENT)."
-  docker build -t $imageName:latest
+  docker build -t $imageName:latest .
   tag="$(date +'%Y-%m-%d_%H-%M-%S')"
   docker tag $imageName "$imageName:$tag"  
 }
