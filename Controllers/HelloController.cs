@@ -9,7 +9,7 @@ namespace Backend
         [HttpGet]
         public string Get()
         {
-            return $"Hello from VSTS-Agent on Linux! Time: {DateTimeOffset.UtcNow.ToString("u")}";
+            return $"Hello from Cross-Platform VSTS-Agent! Time: {DateTimeOffset.UtcNow.ToString("u")}";
         }
     }
 }
