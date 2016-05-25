@@ -2,9 +2,6 @@ FROM microsoft/dotnet:1.0.0-preview1
 
 WORKDIR /dotnetapp
 
-COPY ["project.json", "NuGet.config", "/dotnetapp/"]
-RUN dotnet restore
-COPY . .
-RUN dotnet build
+COPY ./bin/Release/netcoreapp1.0/publish/ ./
 
-ENTRYPOINT ["dotnet", "run"]
+ENTRYPOINT ["dotnet", "service-dotnet.dll"]

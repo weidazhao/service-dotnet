@@ -44,7 +44,9 @@ buildImage () {
 
 # Builds the Docker image.
 buildImage2 () {
-  echo "Building the image $imageName ($ENVIRONMENT)."
+  echo "Building the image $imageName (Release)."
+  dotnet restore
+  dotnet publish -c Release
   docker build -t $imageName:latest .
   docker push $imageName:latest
 }
