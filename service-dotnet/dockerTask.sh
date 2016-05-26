@@ -47,8 +47,6 @@ buildImage2 () {
   echo "Building the image $imageName (Release)."
   dotnet restore
   dotnet publish -c Release -o ./publishOutput/
-  docker build -t $imageName:latest .
-  docker push $imageName:latest
 }
 
 # Runs docker-compose.
