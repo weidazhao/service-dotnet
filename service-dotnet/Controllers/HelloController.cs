@@ -9,7 +9,7 @@ namespace Backend
         [HttpGet]
         public string Get()
         {
-            return $"Hello from VSTS-Agent on Thursday! Time: {DateTimeOffset.UtcNow.ToString("u")}";
+            return $"Hello from VSTS-Agent 2 on Thursday!!!!!!!!!!!!!!! Time: {DateTimeOffset.UtcNow.ToString("u")}";
         }
     }
 }
